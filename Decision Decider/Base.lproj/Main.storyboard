@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,68 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Decision_Decider" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0C-EA-GTq">
+                                <rect key="frame" x="0.0" y="774" width="375" height="30"/>
+                                <state key="normal" title="Decide for me"/>
+                                <connections>
+                                    <action selector="decideButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPb-e5-9Qi"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTD-dp-Ra6">
+                                <rect key="frame" x="0.0" y="90" width="375" height="676"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" id="dcr-JX-pYf">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcr-JX-pYf" id="Va4-Yi-4Jb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter choices" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YuF-ik-Lfq">
+                                <rect key="frame" x="0.0" y="52" width="375" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" keyboardKey="YES"/>
+                                </accessibility>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I0C-EA-GTq" firstAttribute="top" secondItem="xTD-dp-Ra6" secondAttribute="bottom" constant="8" id="5fq-wF-sfv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xTD-dp-Ra6" secondAttribute="trailing" id="8fV-Ae-iz2"/>
+                            <constraint firstAttribute="bottom" secondItem="I0C-EA-GTq" secondAttribute="bottom" constant="8" id="Eyt-ht-Woj"/>
+                            <constraint firstItem="YuF-ik-Lfq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="K4L-Eg-nrc"/>
+                            <constraint firstItem="YuF-ik-Lfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LXD-Sf-gjG"/>
+                            <constraint firstItem="I0C-EA-GTq" firstAttribute="top" secondItem="xTD-dp-Ra6" secondAttribute="bottom" constant="8" id="bh0-e0-YuZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YuF-ik-Lfq" secondAttribute="trailing" id="eax-Tk-lpC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YuF-ik-Lfq" secondAttribute="trailing" id="fLr-9R-YZv"/>
+                            <constraint firstItem="YuF-ik-Lfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="poE-3H-1aZ"/>
+                            <constraint firstItem="xTD-dp-Ra6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sTf-OK-a09"/>
+                            <constraint firstItem="I0C-EA-GTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v7d-Gn-4kg"/>
+                            <constraint firstItem="I0C-EA-GTq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v9k-F3-dm5"/>
+                            <constraint firstItem="xTD-dp-Ra6" firstAttribute="top" secondItem="YuF-ik-Lfq" secondAttribute="bottom" constant="8" id="vD0-uc-dAv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="choiceTextField" destination="YuF-ik-Lfq" id="CrY-XL-IDZ"/>
+                        <outlet property="tableView" destination="xTD-dp-Ra6" id="8QZ-qT-jao"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="137.4384236453202"/>
         </scene>
     </scenes>
 </document>
