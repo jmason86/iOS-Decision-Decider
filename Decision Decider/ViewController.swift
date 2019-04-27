@@ -13,29 +13,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
     private var data: [String] = []
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        print("Editing is about to begin")
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("Editing has begun")
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        print("Editing is about to end")
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("Editing has ended")
         view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("Return button pressed")
-        
         data.append(choiceTextField.text!)
-        print(choiceTextField.text!)
         tableView.reloadData()
         choiceTextField.text = ""
         
@@ -74,21 +67,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDataSour
     }
     
     @IBOutlet weak var choiceTextField: UITextField!
+    
     @IBAction func decideButtonPressed(_ sender: Any) {
-        print("Decide button pressed")
+        view.endEditing(true)
         
         let randomCellIndex = Int.random(in: 0 ..< data.count)
-        let indexPath = IndexPath(row: randomCellIndex, section: 0)
-        let cell = tableView(tableView, cellForRowAt: indexPath)
+        let randomIndexPath = IndexPath(row: randomCellIndex, section: 0)
+        let topIndexPath = IndexPath(row: 0, section: 0)
         
-        print(randomCellIndex)
-        print(indexPath)
-        
-        cell.backgroundColor = UIColor.green
-        tableView.reloadData() // not working
-        
-        
-        
+        tableView.moveRow(at: randomIndexPath, to: topIndexPath)
     }
     
     @IBOutlet weak var tableView: UITableView!

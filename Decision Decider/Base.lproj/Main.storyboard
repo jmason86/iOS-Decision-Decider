@@ -19,18 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0C-EA-GTq">
-                                <rect key="frame" x="0.0" y="774" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="52" width="375" height="30"/>
                                 <state key="normal" title="Decide for me"/>
                                 <connections>
                                     <action selector="decideButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPb-e5-9Qi"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTD-dp-Ra6">
-                                <rect key="frame" x="0.0" y="90" width="375" height="676"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="714"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textField key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter choices" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" id="YuF-ik-Lfq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <accessibilityTraits key="traits" keyboardKey="YES"/>
+                                    </accessibility>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" id="dcr-JX-pYf">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellReuseIdentifier" id="dcr-JX-pYf">
+                                        <rect key="frame" x="0.0" y="58" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dcr-JX-pYf" id="Va4-Yi-4Jb">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
@@ -39,31 +49,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter choices" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YuF-ik-Lfq">
-                                <rect key="frame" x="0.0" y="52" width="375" height="30"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" keyboardKey="YES"/>
-                                </accessibility>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="I0C-EA-GTq" firstAttribute="top" secondItem="xTD-dp-Ra6" secondAttribute="bottom" constant="8" id="5fq-wF-sfv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xTD-dp-Ra6" secondAttribute="trailing" id="8fV-Ae-iz2"/>
-                            <constraint firstAttribute="bottom" secondItem="I0C-EA-GTq" secondAttribute="bottom" constant="8" id="Eyt-ht-Woj"/>
-                            <constraint firstItem="YuF-ik-Lfq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="K4L-Eg-nrc"/>
-                            <constraint firstItem="YuF-ik-Lfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LXD-Sf-gjG"/>
-                            <constraint firstItem="I0C-EA-GTq" firstAttribute="top" secondItem="xTD-dp-Ra6" secondAttribute="bottom" constant="8" id="bh0-e0-YuZ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YuF-ik-Lfq" secondAttribute="trailing" id="eax-Tk-lpC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YuF-ik-Lfq" secondAttribute="trailing" id="fLr-9R-YZv"/>
-                            <constraint firstItem="YuF-ik-Lfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="poE-3H-1aZ"/>
-                            <constraint firstItem="xTD-dp-Ra6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sTf-OK-a09"/>
-                            <constraint firstItem="I0C-EA-GTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v7d-Gn-4kg"/>
-                            <constraint firstItem="I0C-EA-GTq" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="v9k-F3-dm5"/>
-                            <constraint firstItem="xTD-dp-Ra6" firstAttribute="top" secondItem="YuF-ik-Lfq" secondAttribute="bottom" constant="8" id="vD0-uc-dAv"/>
+                            <constraint firstItem="xTD-dp-Ra6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3ZM-vS-Ewb"/>
+                            <constraint firstAttribute="bottom" secondItem="xTD-dp-Ra6" secondAttribute="bottom" constant="8" id="5fL-lt-Gka"/>
+                            <constraint firstItem="I0C-EA-GTq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9GX-UA-gEM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I0C-EA-GTq" secondAttribute="trailing" id="Jdi-xR-ePd"/>
+                            <constraint firstAttribute="trailing" secondItem="xTD-dp-Ra6" secondAttribute="trailing" id="jym-Ai-1tk"/>
+                            <constraint firstItem="I0C-EA-GTq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="s7T-ur-rKv"/>
+                            <constraint firstItem="xTD-dp-Ra6" firstAttribute="top" secondItem="I0C-EA-GTq" secondAttribute="bottom" constant="8" id="zev-Of-uhY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
